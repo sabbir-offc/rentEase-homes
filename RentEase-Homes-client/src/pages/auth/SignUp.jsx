@@ -1,8 +1,9 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   return (
-    <section className="flex items-center justify-center">
+    <section className="flex items-center justify-center min-h-screen">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 place-items-center">
         <div className="relative flex items-end px-4 pb-10 pt-60 sm:px-6 sm:pb-16 md:justify-center lg:px-8 lg:pb-24">
           <div className="absolute inset-0">
@@ -111,13 +112,9 @@ const SignUp = () => {
             </h2>
             <p className="mt-2 text-base text-gray-600">
               Already have an account?{" "}
-              <a
-                href="#"
-                title=""
-                className="font-medium text-black transition-all duration-200 hover:underline"
-              >
-                Sign In
-              </a>
+              <span className="font-medium text-black transition-all duration-200 hover:underline">
+                <Link to={"/sign-in"}>Sign In</Link>
+              </span>
             </p>
             <form className="mt-8">
               <div className="space-y-5">
@@ -146,7 +143,10 @@ const SignUp = () => {
                     {" "}
                     Role{" "}
                   </label>
-                  <select id="role" className="select select-info w-full mt-2">
+                  <select
+                    id="role"
+                    className="select select-bordered w-full mt-2"
+                  >
                     <option disabled selected>
                       Select Role
                     </option>
@@ -156,7 +156,7 @@ const SignUp = () => {
                 </div>
                 <div>
                   <label
-                    htmlFor="email"
+                    htmlFor="phone"
                     className="text-base font-medium text-gray-900"
                   >
                     {" "}
@@ -165,9 +165,9 @@ const SignUp = () => {
                   <div className="mt-2">
                     <input
                       className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
-                      type="email"
+                      type="text"
                       placeholder="Phone number"
-                      id="email"
+                      id="phone"
                     ></input>
                   </div>
                 </div>
